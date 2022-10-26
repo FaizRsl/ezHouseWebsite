@@ -1,0 +1,88 @@
+.emptyspace {
+    height: 400px;
+
+}
+.heatmap_wrapper {
+    position: relative;
+}
+
+.heatmap_title {
+    font-size: 40px;
+    font-weight: bolder;
+    color: #4A73A1;
+    margin-left: 40px;
+    margin-bottom: 15px;
+}
+
+.leaflet-div-icon {
+    background: none !important;
+    border: none !important;
+}
+
+
+.cluster-marker {
+    color: #fff;
+    background: #1978c8;
+    border-radius: 50%;
+    padding: 10px;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leaflet-container {
+    z-index: 0;
+}
+.drawer_wrap {
+    overflow-y: scroll;
+    height: 100vh;
+}
+.drawer_titlewrap {
+    margin-left: 10px;
+}
+.drawer_title {
+    color: #4A73A1;
+    font-size: 24px;
+    weight: 600;
+}
+
+.drawer_bodywrap {
+    display: flex;
+    margin: 10px 10px;
+
+}
+.drawer_img {
+    width: 40%;
+    height: 100%;
+}
+
+.drawer_bodytextwrap {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.pageOverlay {
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1001;
+    display: block;
+}
+
+#loadingOverlay {
+    background-color: rgb(0, 0, 0);
+    opacity: 0.4;
+    z-index: 100;
+}
+
+.loader {
+    display: block;
+    margin: 0 auto;
+         position: fixed;
+        top: 40%;
+        left: 45%;
+ }

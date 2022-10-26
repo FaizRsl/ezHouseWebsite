@@ -1,0 +1,169 @@
+.mapStyle {
+    height: '50vh';
+    width: '40%';
+    margin: '0';
+}
+.predictprice_title {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #4A73A1;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid gray;
+}
+
+.predictprice_wrapper {
+    display: flex;
+    margin-left: 10px;
+    
+}
+
+.predictprice_textwrapper {
+    width: 50%; 
+    margin: 0;
+    display: inline-block;
+}
+
+.predictprice_mapwrapper {
+    width: 50%;
+    margin: 0;
+    display: inline-block;
+}
+
+.predictprice_imgwrap {
+    display: flex;
+}
+
+.predictprice_img {
+    width: 45%;
+}
+
+.predictprice_predicttextwrap {
+    display: inline-block;
+    width: 45%;
+    margin-left: 10px;
+}
+.predictprice_predicttext {
+    margin-top: 0;
+    
+}
+.predictprice_predicttext_label {
+    color: #4A73A1;
+    margin: 0;
+    padding: 0;
+}
+
+.predictprice_hdbinfowrap {
+    margin: 10px 0 0 10px;
+}
+
+.predictprice_hdbinfotext {
+    font-weight: 600;
+    margin: 5px 0;
+    display: block;
+}
+
+.predictprice_filterText {
+    font-weight: bold;
+}
+
+.predictprice_filterbutton {
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    width: 113px;
+    height: 40px;
+    padding: 5px;
+    margin: 0 10px;
+}
+
+.activeButton {
+    background-color: lightblue !important;
+}
+.predictprice_amentieswrap {
+    margin-top: 20px;
+}
+.predictprice_amenitiestext {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #4A73A1;
+}
+.predictprice_amenitiescontentwrap {
+    max-height: 400px;
+    margin-top: 15px;
+    overflow-y: scroll;
+}
+.predictprice_oneAmenities {
+    display: flex;
+    align-items: center;
+    margin: 20px 10px;
+    padding: 5px;
+    border: 1px solid black;
+    
+}
+.predictprice_oneAmenitiesImg {
+    width: 150px;
+    height: 150px;
+    min-width: 150px;
+    min-height: 150px;
+}
+.predictprice_oneAmenitiesTextWrap {
+    display: inline-block;
+    width: 100%;
+    margin-left: 20px;
+}
+.predictprice_oneAmenitiesTitle {
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+.predictprice_oneAmenitiesCategory {
+    padding-bottom: 20px;
+}
+
+.loader {
+    display: "block";
+    margin: "0 auto";
+         position: "fixed";
+        top: "40%";
+        left: "45%";
+ }
+ .predictprice_historywrap {
+    margin-left: 10px;
+ }
+.predictprice_historytext {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 20px;
+    color: #4A73A1;
+}
+
+.predictprice_historycontentwrap {
+    max-height: 500px;
+    margin-top: 5px;
+    overflow-y: scroll;
+}
+
+ #predictprice_historytable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #predictprice_historytable td, #predictprice_historytable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #predictprice_historytable tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #predictprice_historytable tr:hover {background-color: #ddd;}
+  
+  #predictprice_historytable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
