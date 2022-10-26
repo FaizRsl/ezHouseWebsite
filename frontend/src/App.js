@@ -40,9 +40,9 @@ function App() {
           <Route path="predictPrice" element={<PredictPrice />} />
 
           {/* protected routes */}
-          {/* <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
+          <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
               <Route path="predictPrice" element={<PredictPrice />} />
-          </Route> */}
+          </Route>
           {/* catch all */}
 
           <Route path="*" element={<Missing />} />
