@@ -37,7 +37,7 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="unauthorized" element={<Unauthorized />} />
           <Route path="index" element={<Home />} />
-          <Route path="predictPrice" element={<PredictPrice />} />
+          {/* <Route path="predictPrice" element={<PredictPrice />} /> */}
 
           {/* protected routes */}
           <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
