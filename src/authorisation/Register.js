@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from '../api/axios';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import logincss from './authorisation.css';
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -84,18 +84,13 @@ const Register = () => {
     return (
         <>
             {success ? (
-                <section>
-                    <h1>Success!</h1>
-                    <p>
-                        <a href="/login">Sign In</a>
-                    </p>
-                </section>
+                <Navigate to="/login" replace={true} state={{"alert": "Successfully signed up!"}} />
             ) : (
                 <div class="login_wrapper">
                     <div class="signin_wrapper">
-                          <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                         <div class="signin_text">SIGN UP</div>
-
+                        <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+                    
                         <form onSubmit={handleSubmit}>
                             <div class="input-group-wrap">
                                 <div class="omrs-input-group">
@@ -115,12 +110,12 @@ const Register = () => {
                                         />
                                         <span class="omrs-input-label">Username</span>
                                         <span class="omrs-input-helper">
-                                            {/* <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
-                                                <FontAwesomeIcon icon={faInfoCircle} />
+                                            <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
+                                                {/* <FontAwesomeIcon icon={faInfoCircle} /><br></br> */}
                                                 4 to 24 characters.<br />
                                                 Must begin with a letter.<br />
                                                 Letters, numbers, underscores, hyphens allowed.
-                                            </p> */}
+                                            </p>
                                             </span>
                                     </label>
                                 </div>
@@ -141,12 +136,12 @@ const Register = () => {
                                         />
                                         <span class="omrs-input-label">Password</span>
                                         <span class="omrs-input-helper">
-                                            {/* <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
-                                                <FontAwesomeIcon icon={faInfoCircle} />
+                                            <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
+                                                {/* <FontAwesomeIcon icon={faInfoCircle} /><br/> */}
                                                 8 to 24 characters.<br />
                                                 Must include uppercase and lowercase letters, a number and a special character.<br />
                                                 Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
-                                            </p> */}
+                                            </p>
                                         </span>
                                     </label>
                                 </div>
@@ -167,10 +162,9 @@ const Register = () => {
                                         />
                                         <span class="omrs-input-label">Confirm Password</span>
                                         <span class="omrs-input-helper">
-                                            {/* <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
-                                                <FontAwesomeIcon icon={faInfoCircle} />
-                                                Must match the first password input field.
-                                            </p> */}
+                                            <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
+                                                Must match the password input field.
+                                            </p>
                                             </span>
                                     </label>
                                 </div>

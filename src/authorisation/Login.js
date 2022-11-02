@@ -3,13 +3,14 @@ import useAuth from '../hooks/useAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from '../api/axios';
 import logincss from './authorisation.css';
+
 const LOGIN_URL = '/auth';
 
 const Login = () => {
     const { setAuth } = useAuth();
 
     const navigate = useNavigate();
-    const location = useLocation();
+    const {state} = useLocation();
     const from = "/";
     //const from = "/predictPrice";
 
@@ -21,6 +22,12 @@ const Login = () => {
     const [errMsg, setErrMsg] = useState('');
 
     useEffect(() => {
+        if (state != null) { // some browser got weird issue
+            if (state.alert != null) {
+                alert(state.alert)  
+                state.alert = null 
+            }
+        }
         userRef.current.focus();
     }, [])
 
@@ -57,7 +64,7 @@ const Login = () => {
             } else if (err.response?.status === 400) {
                 setErrMsg('Missing Username or Password');
             } else if (err.response?.status === 401) {
-                setErrMsg('Unauthorized');
+                setErrMsg('Wrong Username or Password');
             } else {
                 setErrMsg('Login Failed');
             }
@@ -66,15 +73,17 @@ const Login = () => {
     }
 
     return (
-
-        <div class="login_wrapper">
+        <>
+                <div class="login_wrapper">
             <div class="signin_wrapper">
                 <div>
 
-                <div ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</div>
+                
                 <div class="signin_text">SIGN IN</div>
                 <form onSubmit={handleSubmit}>
                     <div class="input-group-wrap">
+                        
+                    <div ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</div>
                         <div class="omrs-input-group">
                             <label class="omrs-input-underlined">
                                 <input
@@ -114,7 +123,7 @@ const Login = () => {
             </div>
             </div>
         </div>
-
+        </>
     )
 }
 

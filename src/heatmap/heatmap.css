@@ -1,9 +1,10 @@
 .emptyspace {
-    height: 400px;
+    height: 600px;
 
 }
 .heatmap_wrapper {
     position: relative;
+    margin-bottom: 10px;
 }
 
 .heatmap_title {
